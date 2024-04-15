@@ -1,3 +1,5 @@
+import React, { ReactNode } from "react";
+
 interface BadgeProps {
   children: React.ReactNode;
 }
