@@ -26,6 +26,7 @@ async function Home() {
           ))}
         </div>
       </section>
+      
     </main>
   );
 }
