@@ -22,8 +22,6 @@ async function filterJobs(formData: FormData) {
     ...(remote && { remote: "true" }),
   });
 
-  console.log(input);
-
   redirect(`/?${searchParams.toString()}`);
 }
 
