@@ -1,12 +1,12 @@
 "use server";
 
-import prisma from "@/lib/prisma";
 import { toSlug } from "@/lib/utils";
 import { createJobSchema } from "@/lib/validation";
-import { put } from "@vercel/blob";
 import { nanoid } from "nanoid";
-import { redirect } from "next/navigation";
+import { put } from "@vercel/blob";
 import path from "path";
+import prisma from "@/lib/prisma";
+import { redirect } from "next/navigation";
 
 export async function createJobPosting(formData: FormData) {
   const values = Object.fromEntries(formData.entries());
@@ -37,7 +37,6 @@ export async function createJobPosting(formData: FormData) {
         addRandomSuffix: false,
       },
     );
-
     companyLogoUrl = blob.url;
   }
 
@@ -54,6 +53,7 @@ export async function createJobPosting(formData: FormData) {
       applicationUrl: applicationUrl?.trim(),
       description: description?.trim(),
       salary: parseInt(salary),
+      approved: true,
     },
   });
 

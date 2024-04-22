@@ -15,8 +15,6 @@ export default async function JobResults({
     .filter((word) => word.length > 0)
     .join(" & ");
 
-  console.log(searchString);
-
   const searchFilter: Prisma.JobWhereInput = searchString
     ? {
         OR: [
@@ -29,8 +27,6 @@ export default async function JobResults({
       }
     : {};
 
-  console.log(searchFilter);
-
   const where: Prisma.JobWhereInput = {
     AND: [
       searchFilter,
@@ -40,8 +36,6 @@ export default async function JobResults({
       { approved: true },
     ],
   };
-
-  console.log(where);
 
   const jobs = await prisma.job.findMany({
     where,
