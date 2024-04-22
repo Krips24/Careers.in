@@ -16,7 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Select from "@/components/ui/select";
 import { jobTypes, locationTypes } from "@/lib/job-types";
-import { CreateJobValues, createJobSchema } from "@/lib/validation";
+import { CreateJobsValues, createJobSchema } from "@/lib/validation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { X } from "lucide-react";
 import { draftToMarkdown } from "markdown-draft-js";
@@ -24,7 +24,7 @@ import { useForm } from "react-hook-form";
 import { createJobPosting } from "./actions";
 
 export default function NewJobForm() {
-  const form = useForm<CreateJobValues>({
+  const form = useForm<CreateJobsValues>({
     resolver: zodResolver(createJobSchema),
   });
 
@@ -38,7 +38,7 @@ export default function NewJobForm() {
     formState: { isSubmitting },
   } = form;
 
-  async function onSubmit(values: CreateJobValues) {
+  async function onSubmit(values: CreateJobsValues) {
     const formData = new FormData();
 
     Object.entries(values).forEach(([key, value]) => {
