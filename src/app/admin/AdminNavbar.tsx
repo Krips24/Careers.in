@@ -10,22 +10,22 @@ export default function AdminNavbar() {
 
   return (
     <div className="px-3">
-      <div className="m-auto flex h-10 max-w-5xl items-center justify-between gap-2">
-        <Link href="/admin" className="font-semibold underline">
-          Admin Dashboard
-        </Link>
+      <div className="m-auto flex h-10 max-w-5xl items-center justify-between gap-2 py-12">
         <div className="space-x-2">
+          <h1 className="text-center text-sm text-gray-600">Active User:</h1>
           <span className="font-semibold">
             {user?.primaryEmailAddress?.emailAddress}
           </span>
+        </div>
+        <div>
           <button
             onClick={async () => {
               await signOut();
               router.push("/");
             }}
-            className="underline"
+            className="rounded-lg border bg-black px-6 py-2 font-semibold text-white hover:bg-black/80"
           >
-            Log out
+            Log Out
           </button>
         </div>
       </div>

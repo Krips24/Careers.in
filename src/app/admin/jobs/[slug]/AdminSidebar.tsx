@@ -17,9 +17,10 @@ export default function AdminSidebar({ job }: AdminSidebarProps) {
           Approved
         </span>
       ) : (
-        <ApproveSubmissionButton jobId={job.id} />
+        <ApproveButtonSubmission jobId={job.id} />
       )}
-      <DeleteJobButton jobId={job.id} />
+
+      <DeleteButtonSubmission jobId={job.id} />
     </aside>
   );
 }
@@ -28,12 +29,12 @@ interface AdminButtonProps {
   jobId: number;
 }
 
-function ApproveSubmissionButton({ jobId }: AdminButtonProps) {
+export function ApproveButtonSubmission({ jobId }: AdminButtonProps) {
   const [formState, formAction] = useFormState(approveSubmission, undefined);
 
   return (
     <form action={formAction} className="space-y-1">
-      <input hidden name="jobId" value={jobId} />
+      <input hidden name="jobId" value={jobId} readOnly />
       <FormSubmitButton className="w-full bg-green-500 hover:bg-green-600">
         Approve
       </FormSubmitButton>
@@ -44,12 +45,12 @@ function ApproveSubmissionButton({ jobId }: AdminButtonProps) {
   );
 }
 
-function DeleteJobButton({ jobId }: AdminButtonProps) {
+export function DeleteButtonSubmission({ jobId }: AdminButtonProps) {
   const [formState, formAction] = useFormState(deleteJob, undefined);
 
   return (
     <form action={formAction} className="space-y-1">
-      <input hidden name="jobId" value={jobId} />
+      <input hidden name="jobId" value={jobId} readOnly />
       <FormSubmitButton className="w-full bg-red-500 hover:bg-red-600">
         Delete
       </FormSubmitButton>

@@ -48,10 +48,16 @@ export default async function Page({ params: { slug } }: pageProps) {
   return (
     <main className="m-auto my-10 flex max-w-5xl flex-col items-center gap-5 px-3 md:flex-row md:items-start">
       <JobPage job={job} />
-      <aside>
+      <aside className="space-y-4">
         <Button asChild>
           <a href={applicationLink} className="w-40 md:w-fit">
             Apply Now
+          </a>
+        </Button>
+
+        <Button asChild>
+          <a href={`/admin/jobs/${job.slug}`} className="w-40 md:w-fit">
+            Delete Job
           </a>
         </Button>
       </aside>

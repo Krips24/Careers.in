@@ -11,9 +11,16 @@ export default function Navbar() {
           <Image src={logo} width={40} height={40} alt="Tsalla Jobs logo" />
           <span className="text-xl font-bold tracking-tight">Tsalla Jobs</span>
         </Link>
-        <Button asChild>
-          <Link href="/jobs/new">Post a job</Link>
-        </Button>
+
+        <div className="flex gap-5">
+          <Button asChild>
+            <Link href="/jobs/new">Post a job</Link>
+          </Button>
+
+          <Button asChild>
+            <Link href="/admin">Admin Panel</Link>
+          </Button>
+        </div>
       </nav>
     </header>
   );
