@@ -8,19 +8,19 @@ import { JobFilterValues } from "@/lib/validation";
 
 interface pageProps {
   searchParams: {
-    input?: string;
-    jobType?: string;
+    q?: string;
+    type?: string;
     location?: string;
     remote?: string;
   };
 }
 
 export default async function Home({
-  searchParams: { input, jobType, location, remote },
+  searchParams: { q, type, location, remote },
 }: pageProps) {
   const filterValues: JobFilterValues = {
-    input,
-    jobType,
+    q,
+    type,
     location,
     remote: remote === "true",
   };

@@ -13,11 +13,11 @@ async function filterJobs(formData: FormData) {
 
   const values = Object.fromEntries(formData.entries());
 
-  const { input, jobType, location, remote } = jobFilterSchema.parse(values);
+  const { q, type, location, remote } = jobFilterSchema.parse(values);
 
   const searchParams = new URLSearchParams({
-    ...(input && { input: input.trim() }),
-    ...(jobType && { jobType }),
+    ...(q && { q: q.trim() }),
+    ...(type && { type }),
     ...(location && { location }),
     ...(remote && { remote: "true" }),
   });
@@ -48,24 +48,24 @@ export default async function JobFilterSiderbar({
         {/* Search */}
         <div className="space-y-4">
           <div className="flex flex-col gap-2 p-4">
-            <Label htmlFor="input">Search</Label>
+            <Label htmlFor="q">Search</Label>
             <Input
-              id="input"
-              name="input"
+              id="q"
+              name="q"
               placeholder="Title, Company, etc."
-              defaultValue={defaultValues.input}
+              defaultValue={defaultValues.q}
             />
           </div>
 
           {/* Job Type */}
           <div className="flex flex-col gap-2 p-4">
-            <Label htmlFor="jobType">Job Type</Label>
+            <Label htmlFor="type">Job Type</Label>
             <Select
-              id="jobType"
-              name="jobType"
-              defaultValue={defaultValues.jobType || ""}
+              id="type"
+              name="type"
+              defaultValue={defaultValues.type || ""}
             >
-              <option>All Types</option>
+              <option value="">All Types</option>
               {jobTypes.map((type) => (
                 <option key={type} value={type}>
                   {type}
