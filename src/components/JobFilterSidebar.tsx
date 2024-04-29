@@ -43,7 +43,7 @@ export default async function JobFilterSiderbar({
     )) as string[];
 
   return (
-    <aside className="sticky top-0 h-fit rounded-lg border bg-background md:w-[260px]">
+    <aside className="lg:sticky top-0 h-fit rounded-lg border bg-background md:w-[260px]">
       <form action={filterJobs}>
         {/* Search */}
         <div className="space-y-4">
