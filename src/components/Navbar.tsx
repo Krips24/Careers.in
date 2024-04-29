@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 
 export default function Navbar() {
   return (
-    <header className="shadow-sm">
+    <header className=" shadow-md">
       <nav className="m-auto flex max-w-5xl items-center justify-between px-3 py-5">
         <Link href="/" className="flex items-center gap-3">
           <Image src={logo} width={40} height={40} alt="careers.in logo" />
@@ -17,7 +17,7 @@ export default function Navbar() {
             <Link href="/jobs/new">Post a job</Link>
           </Button>
 
-          <Button className="" asChild>
+          <Button asChild>
             <Link href="/admin">Admin</Link>
           </Button>
         </div>
