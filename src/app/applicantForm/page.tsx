@@ -43,7 +43,7 @@ const Test: React.FC = () => {
       <h1 className="mt-4 text-center text-2xl font-semibold">
         Job Application Form
       </h1>
-      <p className="text-center text-sm text-gray-500 mt-3 mb-4">
+      <p className="mb-4 mt-3 text-center text-sm text-gray-500">
         Please fill out the form below to submit your job application.
       </p>
 
@@ -244,7 +244,7 @@ const Test: React.FC = () => {
         </div>
         <button
           type="submit"
-          className="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          className="flex w-full justify-center rounded-md border border-transparent bg-sky-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
         >
           Submit
         </button>

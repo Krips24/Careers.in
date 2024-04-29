@@ -23,7 +23,7 @@ export default function AdminNavbar() {
               await signOut();
               router.push("/");
             }}
-            className="rounded-lg border bg-black px-6 py-2 font-semibold text-white hover:bg-black/80"
+            className="rounded-lg border bg-red-500 px-6 py-2 font-semibold text-white hover:bg-red-600"
           >
             Log Out
           </button>

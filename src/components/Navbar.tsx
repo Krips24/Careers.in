@@ -1,4 +1,4 @@
-import logo from "@/assets/careers-logo.png";
+import logo from "@/assets/careers-logo-2.png";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
@@ -17,8 +17,8 @@ export default function Navbar() {
             <Link href="/jobs/new">Post a job</Link>
           </Button>
 
-          <Button className="bg-indigo-600 hover:bg-indigo-700" asChild>
-            <Link href="/admin">Admin Panel</Link>
+          <Button className="" asChild>
+            <Link href="/admin">Admin</Link>
           </Button>
         </div>
       </nav>
