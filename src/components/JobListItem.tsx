@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Job } from "@prisma/client";
-import companyLogoPlaceHolder from "@/assets/tsalla-jobs-logo.png";
+import companyLogoPlaceHolder from "@/assets/job-logo.png";
 import {
   Banknote,
   Briefcase,

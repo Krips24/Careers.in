@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import JobPage from "@/components/JobPage";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 interface pageProps {
   params: { slug: string };
 }
@@ -48,11 +49,11 @@ export default async function Page({ params: { slug } }: pageProps) {
   return (
     <main className="m-auto my-10 flex max-w-5xl flex-col items-center gap-5 px-3 md:flex-row md:items-start">
       <JobPage job={job} />
-      <aside className="space-y-4">
-        <Button asChild>
-          <a href={applicationLink} className="w-40 md:w-fit">
+      <aside className="space-y-4 max-sm:space-x-4">
+        <Button asChild className="">
+          <Link href="/applicantForm" className="w-40 md:w-fit">
             Apply Now
-          </a>
+          </Link>
         </Button>
 
         <Button asChild>

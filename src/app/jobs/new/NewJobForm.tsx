@@ -282,7 +282,11 @@ export default function NewJobForm() {
                 </FormItem>
               )}
             />
-            <LoadingButton type="submit" loading={isSubmitting}>
+            <LoadingButton
+              className="w-full bg-indigo-600 hover:bg-indigo-700"
+              type="submit"
+              loading={isSubmitting}
+            >
               Submit
             </LoadingButton>
           </form>
