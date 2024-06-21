@@ -12,7 +12,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-wrap gap-5 text-sm text-muted-foreground">
-            <Link href="/about" className="hover:underline">
+            <Link href="/about-us" className="hover:underline">
               About Us
             </Link>
             <Link href="/contact" className="hover:underline">
